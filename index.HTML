@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Profile</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      background: linear-gradient(180deg, #ffb6c1, #87ceeb); /* pink to blue gradient */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    img {
+      width: 120px;   /* smaller size */
+      height: 120px;  /* keep proportions */
+      object-fit: cover;
+      border-radius: 50%; /* makes it a circle */
+      border: 3px solid #fff;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+      margin: 15px 0 25px 0;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      font-size: 1.2rem;
+      color: #333;
+      background: rgba(255,255,255,0.7);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .countdown-container {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      max-width: 400px;
+    }
+
+    .countdown-container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    #countdown {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to My Profile</h1>
+
+  <!-- Replace with your picture -->
+  <img src="profile.jpg" alt="My Profile Picture">
+
+  <p>
+    Hi! My name is Charlotte Kezirian.  
+    I’m passionate about theater and robotics .  
+    I enjoy working on creative projects, learning new skills, and connecting with people.  
+    This site is a little space about me — thanks for stopping by!
+  </p>
+
+  <!-- Countdown Section -->
+  <div class="countdown-container">
+    <h2>Countdown to May 30, 2026:</h2>
+    <div id="countdown"></div>
+  </div>
+
+  <script>
+    // Set the date we are counting down to
+    var countDownDate = new Date("May 30, 2026 00:00:00").getTime();
+
+    // Update the count every second
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      // Time calculations
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output result
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      // If countdown finished
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "🎉 Last Day of school 🎉";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
 
