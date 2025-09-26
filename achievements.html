@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charlotte's Achievements</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cursive', sans-serif;
+      background: linear-gradient(to bottom, pink, lightblue);
+      color: #333;
+      text-align: center;
+    }
+
+    /* Taskbar */
+    .taskbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .taskbar a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .taskbar a:hover {
+      color: hotpink;
+    }
+
+    .content {
+      margin-top: 80px;
+      padding: 20px;
+    }
+
+    .achievements {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .achievements h2 {
+      margin-bottom: 20px;
+    }
+
+    .achievements ul {
+      list-style: none;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    .achievements li {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <a href="index.html">Home</a>
+    <a href="achievements.html">Achievements</a>
+  </div>
+
+  <div class="content">
+    <div class="achievements">
+      <h2>My Achievements</h2>
+      <ul>
+        <li>Graduated high school with honors 🎓</li>
+        <li>Won regional art competition 🎨</li>
+        <li>Volunteered 200+ hours at local shelter ❤️</li>
+        <li>Learned how to code my own website 💻</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
