@@ -9,46 +9,70 @@
       margin: 0;
       font-family: 'Cursive', sans-serif;
       background: linear-gradient(to bottom, pink, lightblue);
-      color: white;
+      color: #333;
       text-align: center;
+    }
+
+    /* Taskbar */
+    .taskbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .taskbar a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .taskbar a:hover {
+      color: hotpink;
     }
 
     /* Header with profile pic + name */
     .header {
       display: flex;
       align-items: center;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.2);
+      padding: 80px 20px 20px;
+      justify-content: center;
     }
 
     .header img {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       margin-right: 15px;
-      border: 3px solid white;
+      border: 3px solid hotpink;
     }
 
     .header h1 {
-      font-size: 24px;
+      font-size: 28px;
       margin: 0;
+      color: #222;
     }
 
     .content {
-      margin-top: 120px;
+      margin-top: 40px;
       padding: 20px;
     }
 
     .bio {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.6);
       padding: 20px;
       border-radius: 15px;
       max-width: 600px;
       margin: 0 auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     /* Countdown styling */
@@ -56,59 +80,17 @@
       margin-top: 30px;
       font-size: 24px;
       font-weight: bold;
-    }
-
-    /* Achievements Section */
-    #achievements {
-      margin-top: 60px;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 15px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    #achievements h2 {
-      margin-bottom: 20px;
-    }
-
-    #achievements ul {
-      list-style: none;
-      padding: 0;
-      font-size: 18px;
-    }
-
-    #achievements li {
-      margin: 10px 0;
-    }
-
-    /* Taskbar */
-    .taskbar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-    }
-
-    .taskbar a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-
-    .taskbar a:hover {
-      color: yellow;
+      color: #222;
     }
   </style>
 </head>
 <body>
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <a href="index.html">Home</a>
+    <a href="achievements.html">Achievements</a>
+  </div>
+
   <!-- Header -->
   <div class="header">
     <img src="IMG_3381.jpeg" alt="Profile Picture">
@@ -124,22 +106,6 @@
 
     <!-- Countdown -->
     <div class="countdown" id="countdown"></div>
-
-    <!-- Achievements -->
-    <div id="achievements">
-      <h2>My Achievements</h2>
-      <ul>
-        <li>Graduated high school with honors 🎓</li>
-        <li>Won regional art competition 🎨</li>
-        <li>Volunteered 200+ hours at local shelter ❤️</li>
-        <li>Learned how to code my own website 💻</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Taskbar -->
-  <div class="taskbar">
-    <a href="#achievements">Achievements</a>
   </div>
 
   <script>
