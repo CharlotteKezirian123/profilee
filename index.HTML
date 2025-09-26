@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Personal Profile</title>
-
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
   
@@ -23,12 +23,13 @@
 
     /* Header container */
     .header {
-      position: absolute;
+      position: fixed;
       top: 20px;
       left: 20px;
       display: flex;
       align-items: center;
       gap: 12px;
+      z-index: 100;
     }
 
     .header img {
@@ -48,6 +49,7 @@
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
 
+    /* Bio */
     p {
       max-width: 600px;
       margin: 120px auto 30px auto; /* space below header */
@@ -59,6 +61,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
+    /* Countdown */
     .countdown-container {
       margin-top: 20px;
       background: rgba(255, 255, 255, 0.8);
@@ -79,56 +82,37 @@
       font-weight: bold;
       color: #222;
     }
-  </style>
-</head>
-<body>
 
-  <!-- Header with name + profile picture -->
-  <div class="header">
-  <img src="IMG_3381.jpeg" alt="My Profile Picture">
-  <h1>Charlotte</h1>
-</div>
+    /* Bottom Task Bar */
+    .taskbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+    }
 
-  <p>
-    𝗛𝗶! 𝗠𝘆 𝗻𝗮𝗺𝗲 𝗶𝘀 𝗖𝗵𝗮𝗿𝗹𝗼𝘁𝘁𝗲 𝗞𝗲𝘇𝗶𝗿𝗶𝗮𝗻 
-    𝗜 𝗹𝗼𝘃𝗲 𝗿𝗼𝗯𝗼𝘁𝗶𝗰𝘀 𝗮𝗻𝗱 𝘁𝗵𝗲𝗮𝘁𝗲𝗿!!
-𝗜 𝗮𝗺 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝗶𝗻 𝗔𝗹𝗶𝗰𝗲 𝗕𝘆 𝗛𝗲𝗮𝗿𝘁 𝗮𝘀 𝘁𝗵𝗲 𝗤𝘂𝗲𝗲𝗻 𝗼𝗳 𝗗𝗶𝗮𝗼𝗺𝗱𝘀
+    .taskbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
 
-  </p>
+    .taskbar a:hover {
+      background: #ffb6c1;
+      color: white;
+    }
 
-  <!-- Countdown Section -->
-  <div class="countdown-container">
-    <h2>Countdown to the last day of DXSF:</h2>
-    <div id="countdown"></div>
-  </div>
+    .taskbar a.instagram {
+      background: #e1306c;
+      color: white;
+    }
 
-  <script>
-    // Set the date we are counting down to
-    var countDownDate = new Date("May 30, 2026 00:00:00").getTime();
-
-    // Update the count every second
-    var x = setInterval(function() {
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
-
-      // Time calculations
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Output result
-      document.getElementById("countdown").innerHTML =
-        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-      // If countdown finished
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "🎉 It's here! 🎉";
-      }
-    }, 1000);
-  </script>
-
-</body>
-</html>
-
+    .taskbar a.instagram:ho
