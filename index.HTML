@@ -1,171 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Personal Profile</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charlotte's Profile</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(180deg, #ffb6c1, #87ceeb); /* pink to blue gradient */
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: 'Cursive', sans-serif;
+      background: linear-gradient(to bottom, pink, lightblue);
+      color: white;
       text-align: center;
     }
 
-    /* Header container */
+    /* Header with profile pic + name */
     .header {
-      position: fixed;
-      top: 20px;
-      left: 20px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      z-index: 100;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
     }
 
     .header img {
       width: 60px;
       height: 60px;
-      object-fit: cover;
       border-radius: 50%;
-      border: 2px solid #fff;
-      box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+      margin-right: 15px;
+      border: 3px solid white;
     }
 
     .header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2rem;
-      color: #fff;
+      font-size: 24px;
       margin: 0;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
 
-    /* Bio */
-    p {
+    .content {
+      margin-top: 120px;
+      padding: 20px;
+    }
+
+    .bio {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 15px;
       max-width: 600px;
-      margin: 120px auto 30px auto; /* space below header */
-      font-size: 1.2rem;
-      color: #333;
-      background: rgba(255,255,255,0.7);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin: 0 auto;
     }
 
-    /* Countdown */
-    .countdown-container {
-      margin-top: 20px;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      max-width: 400px;
-    }
-
-    .countdown-container h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #444;
-    }
-
-    #countdown {
-      font-size: 1.5rem;
+    /* Countdown styling */
+    .countdown {
+      margin-top: 30px;
+      font-size: 24px;
       font-weight: bold;
-      color: #222;
     }
 
-    /* Bottom Task Bar */
+    /* Achievements Section */
+    #achievements {
+      margin-top: 60px;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #achievements h2 {
+      margin-bottom: 20px;
+    }
+
+    #achievements ul {
+      list-style: none;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    #achievements li {
+      margin: 10px 0;
+    }
+
+    /* Taskbar */
     .taskbar {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(0, 0, 0, 0.5);
       display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+      justify-content: center;
+      padding: 15px 0;
     }
 
     .taskbar a {
+      color: white;
       text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      padding: 8px 15px;
-      border-radius: 10px;
-      transition: all 0.3s ease;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s;
     }
 
     .taskbar a:hover {
-      background: #ffb6c1;
-      color: white;
+      color: yellow;
     }
   </style>
 </head>
 <body>
-
-  <!-- Header with profile picture + name -->
+  <!-- Header -->
   <div class="header">
-    <img src="IMG_3381.jpeg" alt="My Profile Picture">
+    <img src="IMG_3381.jpeg" alt="Profile Picture">
     <h1>Charlotte</h1>
   </div>
 
-  <!-- Bio -->
-  <p>
-    Hi! My name is ✨✨ <strong>CHARLOTTE KEZIRIAN</strong> ✨✨  
-    I’m passionate about Robotics and Theater!!  
-    I enjoy working on creative projects, learning new skills, and connecting with people.  
-    This site is a little space about me — thanks for stopping by!
-  </p>
+  <!-- Content -->
+  <div class="content">
+    <div class="bio">
+      <h2>About Me</h2>
+      <p>Hello! I'm Charlotte, welcome to my personal profile website. I love creating, learning, and celebrating milestones in my journey.</p>
+    </div>
 
-  <!-- Countdown Section -->
-  <div class="countdown-container">
-    <h2>Countdown to May 30, 2026:</h2>
-    <div id="countdown"></div>
+    <!-- Countdown -->
+    <div class="countdown" id="countdown"></div>
+
+    <!-- Achievements -->
+    <div id="achievements">
+      <h2>My Achievements</h2>
+      <ul>
+        <li>Graduated high school with honors 🎓</li>
+        <li>Won regional art competition 🎨</li>
+        <li>Volunteered 200+ hours at local shelter ❤️</li>
+        <li>Learned how to code my own website 💻</li>
+      </ul>
+    </div>
   </div>
 
-  <!-- Task Bar -->
+  <!-- Taskbar -->
   <div class="taskbar">
     <a href="#achievements">Achievements</a>
-    <a href="#education">Education</a>
-    <a href="#work">Work</a>
   </div>
 
   <script>
-    // Set the date we are counting down to
-    var countDownDate = new Date("May 30, 2026 00:00:00").getTime();
+    // Countdown Timer
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("May 30, 2026 00:00:00").getTime();
 
-    // Update the count every second
-    var x = setInterval(function() {
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
+    setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
 
-      // Time calculations
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // Output result
-      document.getElementById("countdown").innerHTML =
-        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      countdown.innerHTML = `Countdown to May 30, 2026: ${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-      // If countdown finished
       if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "🎉 It's here! 🎉";
+        countdown.innerHTML = "The day has arrived!";
       }
     }, 1000);
   </script>
-
 </body>
 </html>
