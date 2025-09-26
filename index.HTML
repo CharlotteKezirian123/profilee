@@ -109,10 +109,63 @@
       background: #ffb6c1;
       color: white;
     }
+  </style>
+</head>
+<body>
 
-    .taskbar a.instagram {
-      background: #e1306c;
-      color: white;
-    }
+  <!-- Header with profile picture + name -->
+  <div class="header">
+    <img src="IMG_3381.jpeg" alt="My Profile Picture">
+    <h1>Charlotte</h1>
+  </div>
 
-    .taskbar a.instagram:ho
+  <!-- Bio -->
+  <p>
+    Hi! My name is ✨✨ <strong>CHARLOTTE KEZIRIAN</strong> ✨✨  
+    I’m passionate about Robotics and Theater!!  
+    I enjoy working on creative projects, learning new skills, and connecting with people.  
+    This site is a little space about me — thanks for stopping by!
+  </p>
+
+  <!-- Countdown Section -->
+  <div class="countdown-container">
+    <h2>Countdown to May 30, 2026:</h2>
+    <div id="countdown"></div>
+  </div>
+
+  <!-- Task Bar -->
+  <div class="taskbar">
+    <a href="#achievements">Achievements</a>
+    <a href="#education">Education</a>
+    <a href="#work">Work</a>
+  </div>
+
+  <script>
+    // Set the date we are counting down to
+    var countDownDate = new Date("May 30, 2026 00:00:00").getTime();
+
+    // Update the count every second
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      // Time calculations
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output result
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      // If countdown finished
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "🎉 It's here! 🎉";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
