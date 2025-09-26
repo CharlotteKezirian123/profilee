@@ -17,7 +17,7 @@
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #ff9ecb, #8ec5fc);
       color: #333;
-      height: 200vh; /* Makes page scrollable */
+      height: 200vh;
     }
 
     /* Top-left profile */
@@ -43,8 +43,8 @@
       color: white;
     }
 
-    /* Center bio section */
-    .center-bio {
+    /* Center content */
+    .center-content {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -58,7 +58,7 @@
       max-width: 600px;
     }
 
-    .center-bio h2 {
+    .center-content h2 {
       font-family: 'Pacifico', cursive;
       font-size: 2.5rem;
       color: white;
@@ -69,11 +69,36 @@
       font-size: 1.2rem;
       color: white;
       line-height: 1.6;
+      margin-bottom: 40px;
     }
 
-    /* Smooth scroll effect */
-    html {
-      scroll-behavior: smooth;
+    /* Rock-Paper-Scissors game */
+    .rps-game {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .rps-game button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .rps-game button:hover {
+      transform: scale(1.1);
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 1.2rem;
     }
   </style>
 </head>
@@ -85,14 +110,53 @@
     <h1>Charlotte Kezirian</h1>
   </div>
 
-  <!-- Center bio -->
-  <div class="center-bio">
+  <!-- Center content -->
+  <div class="center-content">
     <h2>Hello, I'm Charlotte!</h2>
     <p class="bio">
       Welcome to my personal profile website! I am passionate about technology, creativity, and sharing ideas. 
       I love coding, designing, and building projects that inspire. Scroll down to explore more about me and my work!
     </p>
+
+    <!-- Rock-Paper-Scissors Game -->
+    <div class="rps-game">
+      <h3>Play Rock-Paper-Scissors!</h3>
+      <button onclick="playRPS('Rock')">Rock</button>
+      <button onclick="playRPS('Paper')">Paper</button>
+      <button onclick="playRPS('Scissors')">Scissors</button>
+      <div class="result" id="rpsResult">Make your choice!</div>
+      <div class="score" id="rpsScore">Player: 0 | Computer: 0</div>
+    </div>
   </div>
+
+  <script>
+    let playerScore = 0;
+    let computerScore = 0;
+
+    function playRPS(playerChoice) {
+      const choices = ['Rock', 'Paper', 'Scissors'];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+      let resultText = `Computer chose ${computerChoice}. `;
+
+      if (playerChoice === computerChoice) {
+        resultText += "It's a tie!";
+      } else if (
+        (playerChoice === 'Rock' && computerChoice === 'Scissors') ||
+        (playerChoice === 'Paper' && computerChoice === 'Rock') ||
+        (playerChoice === 'Scissors' && computerChoice === 'Paper')
+      ) {
+        resultText += "You win!";
+        playerScore++;
+      } else {
+        resultText += "You lose!";
+        computerScore++;
+      }
+
+      document.getElementById('rpsResult').innerText = resultText;
+      document.getElementById('rpsScore').innerText = `Player: ${playerScore} | Computer: ${computerScore}`;
+    }
+  </script>
 
 </body>
 </html>
