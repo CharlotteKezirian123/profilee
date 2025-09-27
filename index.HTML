@@ -195,11 +195,9 @@
       document.getElementById('rpsScore').innerText = `Player: ${playerScore} | Computer: ${computerScore}`;
     }
 
-    /* Countdown Timer */
-<script>
-  /* Countdown Timer */
-  function updateCountdown() {
-    const targetDate = new Date("May 30, 2026 00:00:00").getTime();
+    function updateCountdown() {
+    // Use YYYY-MM-DD format (most reliable)
+    const targetDate = new Date("2026-05-30T00:00:00").getTime();
     const now = new Date().getTime();
     const distance = targetDate - now;
 
@@ -217,6 +215,7 @@
       `${days}d ${hours}h ${minutes}m ${seconds}s`;
   }
 
+  // Update every second
   setInterval(updateCountdown, 1000);
   updateCountdown();
 </script>
