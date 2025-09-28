@@ -4,77 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charlotte's Achievements</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Cursive', sans-serif;
-      background: linear-gradient(to bottom, pink, lightblue);
-      color: #333;
-      text-align: center;
-    }
-
-    /* Taskbar */
-    .taskbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: white;
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .taskbar a {
-      color: #333;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .taskbar a:hover {
-      color: hotpink;
-    }
-
-    .content {
-      margin-top: 80px;
-      padding: 20px;
-    }
-
-    .achievements {
-      background: rgba(255, 255, 255, 0.6);
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 600px;
-      margin: 0 auto;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .achievements h2 {
-      margin-bottom: 20px;
-    }
-
-    .achievements ul {
-      list-style: none;
-      padding: 0;
-      font-size: 18px;
-    }
-
-    .achievements li {
-      margin: 10px 0;
-    }
-  </style>
+  <link rel="stylesheet" href = "style.css"/> 
 </head>
 <body>
-  <!-- Taskbar -->
-  <div class="taskbar">
-    <a href="index.html">Home</a>
-    <a href="achievements.html">Achievements</a>
-  </div>
+  <!-- Hamburger Icon -->
+  <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
 
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="bio.html">Bio</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="theater.html">Theater History</a>
+  </div>
+  <div class="top-left">
+    <img src="assets/IMG_3381.jpeg" alt="Profile Picture">
+    <h1>Charlotte Kezirian</h1>
+  </div>
+  <!-- Content -->
   <div class="content">
     <div class="achievements">
       <h2>My Achievements</h2>
@@ -86,5 +33,11 @@
       </ul>
     </div>
   </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
