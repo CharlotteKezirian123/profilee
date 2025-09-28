@@ -5,136 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Personal Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #ff9ecb, #8ec5fc);
-      color: #333;
-      height: 200vh;
-    }
-
-    /* Top-left profile */
-    .top-left {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .top-left img {
-  width: 80px;   /* Increased from 50px */
-  height: 80px;  /* Keep square so it stays round */
-  border-radius: 50%;
-  border: 3px solid white;
-    }
-
-    .top-left h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.5rem;
-      color: white;
-    }
-
-    /* Center content */
-    .center-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 0 20px;
-      max-width: 800px;
-    }
-
-    .center-content h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5rem;
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    .bio {
-      font-size: 1.2rem;
-      color: white;
-      line-height: 1.6;
-      margin-bottom: 40px;
-    }
-
-    /* Flex container for countdown + game */
-    .content-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      width: 100%;
-    }
-
-    /* Countdown */
-    .countdown {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      border-radius: 15px;
-      color: white;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .countdown h3 {
-      margin-bottom: 10px;
-      font-size: 1.5rem;
-    }
-
-    #timer {
-      font-size: 1.2rem;
-    }
-
-    /* Rock-Paper-Scissors game */
-    .rps-game {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      color: white;
-      font-weight: bold;
-    }
-
-    .rps-game button {
-      padding: 10px 20px;
-      margin: 5px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .rps-game button:hover {
-      transform: scale(1.1);
-    }
-
-    .result {
-      margin-top: 15px;
-      font-size: 1.2rem;
-    }
-  </style>
+  <link rel="stylesheet" href = "style.css"/> 
+  <script src="script.JS"defer></script> 
 </head>
 <body>
+    <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <a href="index.html">Home</a>
+      <a href="bio.html">Bio</a>
+      <a href="achivements.html">Achievements</a>
+      <a href="theater.html">Theater History</a>
+    </div>
+  
+
 
   <!-- Top-left corner profile -->
   <div class="top-left">
-    <img src="IMG_3381.jpeg" alt="Profile Picture">
+    <img src="assets/IMG_3381.jpeg" alt="Profile Picture">
     <h1>Charlotte Kezirian</h1>
   </div>
 
@@ -142,15 +31,14 @@
   <div class="center-content">
     <h2>Hello, I'm Charlotte!</h2>
     <p class="bio">
-      Welcome to my personal profile website! I am passionate about technology, creativity, and sharing ideas. 
-      I love coding, designing, and building projects that inspire. Scroll down to explore more about me and my work!
-    </p>
+      Hi welcome to my small part of the internet! 
+    </p >
 
-    <!-- Countdown + Rock-Paper-Scissors side by side -->
+     <!--Countdown + Rock-Paper-Scissors side by side-->
     <div class="content-row">
       <!-- Countdown -->
       <div class="countdown">
-        <h3>Countdown to May 30, 2026</h3>
+        <h3>Countdown to the last day of DXSF</h3>
         <div id="timer">Loading...</div>
       </div>
 
@@ -165,56 +53,3 @@
       </div>
     </div>
   </div>
-
-  <script>
-    /* Rock-Paper-Scissors */
-    let playerScore = 0;
-    let computerScore = 0;
-
-    function playRPS(playerChoice) {
-      const choices = ['Rock', 'Paper', 'Scissors'];
-      const computerChoice = choices[Math.floor(Math.random() * 3)];
-
-      let resultText = `Computer chose ${computerChoice}. `;
-
-      if (playerChoice === computerChoice) {
-        resultText += "It's a tie!";
-      } else if (
-        (playerChoice === 'Rock' && computerChoice === 'Scissors') ||
-        (playerChoice === 'Paper' && computerChoice === 'Rock') ||
-        (playerChoice === 'Scissors' && computerChoice === 'Paper')
-      ) {
-        resultText += "You win!";
-        playerScore++;
-      } else {
-        resultText += "You lose!";
-        computerScore++;
-      }
-
-      document.getElementById('rpsResult').innerText = resultText;
-      document.getElementById('rpsScore').innerText = `Player: ${playerScore} | Computer: ${computerScore}`;
-    }
-
-    function updateCountdown() {
-    // Use YYYY-MM-DD format (most reliable)
-    const targetDate = new Date("2026-05-30T00:00:00").getTime();
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-      document.getElementById("timer").innerText = "🎉 The day has arrived!";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("timer").innerText =`${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }
-
-  // Update every second
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-</script>
